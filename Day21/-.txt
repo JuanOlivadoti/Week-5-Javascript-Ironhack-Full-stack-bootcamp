@@ -1,0 +1,48 @@
+$(document).on('ready', function (){
+
+	$('#button').on('click', function () {
+	    $.ajax({
+	    	type: "GET",
+	    	url: "https://ironhack-characters.herokuapp.com/characters",
+	    	success: showCharacters,
+	    	error: handleError 
+    	});
+
+    	function showCharacters(response) {
+	    		console.log("Success!");
+	    		var charactersArray = response;
+
+	    		charactersArray.forEach(function (char){
+	    			var html = `<li> ${char.name}: ${char.occupation}, Weapon: ${char.weapon}</li>`
+	    			$('#ul').append(html);
+	    		});
+
+
+	    	};
+
+	    function handleError(error) {
+	    		console.log("Error!");
+	    		console.log(error.responseText);
+	    	};
+	});
+
+	$('#create').on('click', function () {
+		$.ajax({
+	    	type: "POST",
+	    	url: "https://ironhack-characters.herokuapp.com/characters",
+	    	data: newCharacter,
+	    	success: updateList,
+	    	error: handleError 
+    	});
+	});
+	
+});
+
+var newCharacter = {
+	name: "Lopera",
+	occupation: "Gañan",
+	weapon: "Hugo"
+};
+
+
+
