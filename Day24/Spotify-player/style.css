@@ -1,0 +1,283 @@
+@import url(http://fonts.googleapis.com/css?family=Concert+One);
+
+body{
+  background: url('https://marinachetner.files.wordpress.com/2012/02/lenny_nyc.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+/*
+.header {
+  height: 78px;
+  background-color: #ccc;
+  position: relative;
+  font-size: 12px;
+}
+*/
+label{
+  color:#eee;
+  font-weight: bolder;
+}
+
+/* ============== PAGE BRAND ==================*/
+
+figure {
+  animation:wobble 5s ease-in-out infinite;
+  transform-origin:center center;
+  transform-style:preserve-3d;
+}
+
+@keyframes wobble {
+  0%,100%{ transform:rotate3d(1,1,0,40deg); }
+  25%{ transform:rotate3d(-1,1,0,40deg); }
+  50%{ transform:rotate3d(-1,-1,0,40deg); }
+  75%{ transform:rotate3d(1,-1,0,40deg); }
+}
+
+@keyframes glow {
+  0%,100%{ text-shadow:0 0 20px #02A803; }
+  25%{ text-shadow:0 0 10px #125A06; }
+  50%{ text-shadow:0 0 20px #1BD31B; }
+  75%{ text-shadow:0 0 10px #47B347; }
+}
+
+h1.spotiRock{
+  animation:glow 10s ease-in-out infinite;
+  display:block;
+  width:100%;
+  padding:10px;
+  line-height:1.5;
+  text-transform:uppercase;
+  position:absolute;
+  color:#fff;
+  font-size: 2.8em;
+  font-weight: bolder;
+  text-shadow: 5px 5px 5px green;
+}
+
+h1.spotiRock:nth-child(2){ transform:translateZ(4px); }
+h1.spotiRock:nth-child(3){ transform:translateZ(8px); }
+h1.spotiRock:nth-child(4){ transform:translateZ(12px); }
+h1.spotiRock:nth-child(5){ transform:translateZ(16px); }
+h1.spotiRock:nth-child(6){ transform:translateZ(20px); }
+h1.spotiRock:nth-child(7){ transform:translateZ(24px); }
+h1.spotiRock:nth-child(8){ transform:translateZ(28px); }
+
+/* ============= INFORMATION =====================*/
+
+.widget {
+  width: 300px;
+  margin: 10px auto 0;
+  border-radius: 5px;
+  overflow: hidden;
+  display: block;
+}
+
+.back{
+  background-color: rgba(0,0,0,0.7);
+  min-height: 50%;
+  margin:50px 0;
+}
+
+
+.btn-play {
+  margin: 9px;
+  width: 60px;
+  height: 60px;
+  float: left;
+  border-radius: 50px;
+  border: 1px solid #fff;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.btn-play:after {
+  content: ' ';
+  position: relative;
+  display: block;
+  width: 0px;
+  height: 0px;
+  margin-left: 50%;
+  margin-top: 50%;
+  left: -10px;
+  top: -18px;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 30px solid #fff;
+  transition: all .15s;
+}
+
+.btn-play:hover {
+  cursor: pointer;
+  border-color: transparent;
+
+}
+
+.btn-play:hover:after {
+  border-left-color: #666;
+  transform: scale(2,2);
+  border-left: 30px solid cyan;
+}
+
+.btn-play:active:after {
+  border-left-color: #000;
+}
+
+.btn-play.playing:before, .btn-play.playing:after {
+  width: 9px;
+  height: 36px;
+  background-color: #fff;
+  position: absolute;
+  content: "";
+  top: 22px;
+  left: 27px;
+  border: 0;
+  margin:2% 3%;
+  padding:0 5px;
+}
+
+.btn-play.playing:after {
+  left: 43px;
+}
+
+.btn-play.playing:hover:before, .btn-play.playing:hover:after {
+  background-color: #d24343;
+  transform: scale(2,2);
+}
+
+.btn-play.playing:hover:before{
+  left: 4%;
+}
+
+
+.btn-play.playing:active:before, .btn-play.playing:active:after {
+  background-color: #000;
+}
+
+.btn-play.disabled {
+  border-color: #888;
+}
+
+.btn-play.disabled:hover {
+  cursor: none;
+}
+
+.btn-play.disabled:after {
+  border-left-color: #888;
+}
+
+.metadata {
+  display: inline-block;
+  padding: 10px;
+  width: calc(100% - 100px);
+}
+
+.songTitle, .author {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+  line-height: 1.4em;
+  height: 1.4em;
+  font-weight: bold;
+  color:#ddd;
+}
+
+.author{
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.author:hover{
+  text-decoration: none;
+  font-size:16px;
+  color:green;
+  cursor: pointer;
+}
+
+.seekbar {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.cover {
+  min-height: 50%;
+  position: relative;
+}
+
+.cover img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 0;
+  border: 0;
+}
+
+audio {
+  display: none;
+}
+
+progress {
+  width: 100%;
+  height: 5px;
+  padding: 0;
+  background-color: #3e3e40;
+  position: relative;
+  border: 0;
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #3e3e40;
+}
+
+progress::-webkit-progress-value {
+  background-color: #45a800;
+}
+
+progress::-moz-progress-bar {
+  background-color: #45a800;
+}
+
+input{
+  width:100%;
+}
+
+#trackInfo{
+  background-color: rgba(50,50,50,0.6 );
+  margin:20px 20px;
+  border-radius: 20px;
+  box-shadow: rgba(255,0,0,0.7);
+  transform:rotate3d(1,1,0,20deg);
+}
+
+img{
+  padding:20px 0 ;
+}
+
+
+.presentation{
+  min-height: 15%;
+  margin-bottom: 50px;
+}
+
+form{
+  margin:10% 0;
+}
+
+/* ====================================== MODAL STYLE =============*/
+
+.modal-dialog{
+  background-size: cover;
+  min-width: 70%;
+  box-sizing: border-box;
+}
+
+#author-photo{
+  height:400px;
+  width: 400px;
+}
+
+section.information{
+  display:none;
+}
