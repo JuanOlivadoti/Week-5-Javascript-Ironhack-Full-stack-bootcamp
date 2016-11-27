@@ -1,11 +1,13 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+<link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="spoty.js"></script>
+  <script src="js/spoty.js"></script>
 
 </head>
 <body>
@@ -15,14 +17,14 @@
 		<div class="row">
 			<div class="col-md-4">
 				<figure>
-				<h1 class="spotiRock">SPOTIFY PLAYER</h1>
-				<h1 class="spotiRock">SPOTIFY PLAYER</h1>
-				<h1 class="spotiRock">SPOTIFY PLAYER</h1>
-				<h1 class="spotiRock">SPOTIFY PLAYER</h1>
-				<h1 class="spotiRock">SPOTIFY PLAYER</h1>
-				<h1 class="spotiRock">SPOTIFY PLAYER</h1>
-				<h1 class="spotiRock">SPOTIFY PLAYER</h1>
-				<h1 class="spotiRock">SPOTIFY PLAYER</h1>
+				<h1 class="spotiRock CO">SPOTIFY PLAYER</h1>
+				<h1 class="spotiRock CO">SPOTIFY PLAYER</h1>
+				<h1 class="spotiRock CO">SPOTIFY PLAYER</h1>
+				<h1 class="spotiRock CO">SPOTIFY PLAYER</h1>
+				<h1 class="spotiRock CO">SPOTIFY PLAYER</h1>
+				<h1 class="spotiRock CO">SPOTIFY PLAYER</h1>
+				<h1 class="spotiRock CO">SPOTIFY PLAYER</h1>
+				<h1 class="spotiRock CO">SPOTIFY PLAYER</h1>
 				</figure>
 			</div>
 		</div>
@@ -45,7 +47,7 @@
 <section class="information">  <!-- --------------- INFORMATION ------------------ -->
 	<div class="container-fluid back">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<div class="widget">
 					<div class="cover">
 						<img id="trkImg" src="https://i.scdn.co/image/04da6dfc1f5f45fdeba938a0cc71cf372524fd43">
@@ -53,13 +55,17 @@
 				</div>
 				<audio id="trkUrl" src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31"></audio>
 			</div>
-			<div id="trackInfo" class="col-md-4 metadata">
+			<div id="trackInfo" class="col-md-6 metadata">
 				<div id="console-btn" class="btn-play disabled"></div>
 			  <h4 class="songTitle" id="songTitle">No title loaded</h4>
 			  <a id="author" class="author" data-toggle="modal" data-target="#myModal"> -- -- </a>
 			  <div class="seekbar">
 			    <progress id="prog-bar" value="0" max="30"></progress>
 			  </div>
+			  <hr>
+			  <p class="songList">More songs with that title:</p>
+				<ul class="songList">
+				</ul>
 			</div>
 		</div>
 	</div>

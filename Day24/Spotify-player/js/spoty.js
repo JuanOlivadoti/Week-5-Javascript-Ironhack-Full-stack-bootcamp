@@ -6,12 +6,12 @@ $(document).ready(function() {
 		$('#results').html("");
 		$('section.information').css('display','block');
 
-		
+		console.log("Hi, there!");
 		event.preventDefault();
 
 		$.ajax ({
 			type: "GET",
-			url: "https://api.spotify.com/v1/search?type=track&query="+($('#input-search').val()),
+			url: "https://api.spotify.com/v1/search?q="+($('#input-search').val())+"&type=track",
 			success: showAll,
 			error: handleErrors
 		});
@@ -27,9 +27,14 @@ function handleErrors(errors){
 
 function showAll(response) {
 
+	$('#console-btn').toggleClass("disabled");
+
+
 	var info = response.tracks.items[0];
 
-	console.log(info);
+	// console.log(info);
+	// console.log("Hi, there!");
+	console.log(response.tracks);
 
 	$('#author').text(info.artists[0].name);
 	$('#modalAuthor').attr('value',info.artists[0].id); 
@@ -37,12 +42,23 @@ function showAll(response) {
 	$('#songTitle').text(info.name);
 	$('#trkUrl').attr('src', info.preview_url);
 	$('#trkImg').attr('src', info.album.images[0].url);
-	$('#console-btn').toggleClass("disabled");
 
 	var authorId = info.artists[0].id;
 	
-	// console.log(info.artists[0].external_urls.spotify);
 	window.localStorage.setItem("author", authorId);
+
+	var moreSongs = response.tracks.items;
+
+	moreSongs.forEach(function(element){
+
+		var songElement = `
+		<li><a id="thisSong">${element.name} - by ${element.artists["0"].name}</a></li>`;
+
+		$('ul.songList').append(songElement);
+
+		console.log(element.name);
+
+	});
 
 }
 
@@ -96,7 +112,7 @@ $('#console-btn').click(function(){
 function printTime () {
   var current = $('#trkUrl').prop('currentTime');
   console.debug('Current time: ' + current);
-  $('prog-bar').attr('value', current);
+  $('#prog-bar').attr('value', current);
 }
 
 

@@ -1,37 +1,15 @@
-@import url(http://fonts.googleapis.com/css?family=Concert+One);
 
 body{
-  background: url('https://marinachetner.files.wordpress.com/2012/02/lenny_nyc.jpg') center center no-repeat;
+  background: url('../assets/lenny_nyc.jpg') center center no-repeat;
   background-size: cover;
 }
 
-/*
-.header {
-  height: 78px;
-  background-color: #ccc;
-  position: relative;
-  font-size: 12px;
-}
-*/
 label{
   color:#eee;
   font-weight: bolder;
 }
 
 /* ============== PAGE BRAND ==================*/
-
-figure {
-  animation:wobble 5s ease-in-out infinite;
-  transform-origin:center center;
-  transform-style:preserve-3d;
-}
-
-@keyframes wobble {
-  0%,100%{ transform:rotate3d(1,1,0,40deg); }
-  25%{ transform:rotate3d(-1,1,0,40deg); }
-  50%{ transform:rotate3d(-1,-1,0,40deg); }
-  75%{ transform:rotate3d(1,-1,0,40deg); }
-}
 
 @keyframes glow {
   0%,100%{ text-shadow:0 0 20px #02A803; }
@@ -49,9 +27,10 @@ h1.spotiRock{
   text-transform:uppercase;
   position:absolute;
   color:#fff;
-  font-size: 2.8em;
+  font-size: 3.2em;
   font-weight: bolder;
   text-shadow: 5px 5px 5px green;
+  font-family: Concert one;
 }
 
 h1.spotiRock:nth-child(2){ transform:translateZ(4px); }
@@ -75,7 +54,7 @@ h1.spotiRock:nth-child(8){ transform:translateZ(28px); }
 .back{
   background-color: rgba(0,0,0,0.7);
   min-height: 50%;
-  margin:50px 0;
+  margin:20px 0;
 }
 
 
@@ -131,7 +110,7 @@ h1.spotiRock:nth-child(8){ transform:translateZ(28px); }
   top: 22px;
   left: 27px;
   border: 0;
-  margin:2% 3%;
+  margin:1.5% 2%;
   padding:0 5px;
 }
 
@@ -145,7 +124,7 @@ h1.spotiRock:nth-child(8){ transform:translateZ(28px); }
 }
 
 .btn-play.playing:hover:before{
-  left: 4%;
+  left: 2%;
 }
 
 
@@ -248,8 +227,8 @@ input{
   margin:20px 20px;
   border-radius: 20px;
   box-shadow: rgba(255,0,0,0.7);
-  transform:rotate3d(1,1,0,20deg);
-}
+/*  transform:rotate3d(1,1,0,20deg);
+*/}
 
 img{
   padding:20px 0 ;
@@ -263,6 +242,23 @@ img{
 
 form{
   margin:10% 0;
+}
+
+.songList{
+  color: #fff;
+}
+
+ul.songList a, ul.songList li{
+  color: #fff;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+ul.songList a:hover{
+  cursor: pointer;
+  color: #0a0;
+  font-weight: bolder;
+  text-shadow: 0 0 6px #000;
 }
 
 /* ====================================== MODAL STYLE =============*/
@@ -280,4 +276,6 @@ form{
 
 section.information{
   display:none;
+  transform:rotate3d(1,1,0,20deg);
+
 }
