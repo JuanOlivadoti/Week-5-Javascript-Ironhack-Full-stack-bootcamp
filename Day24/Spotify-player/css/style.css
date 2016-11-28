@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Concert+One|Open+Sans:300,400,700');
 
 body{
   background: url('../assets/lenny_nyc.jpg') center center no-repeat;
@@ -12,34 +13,25 @@ label{
 /* ============== PAGE BRAND ==================*/
 
 @keyframes glow {
-  0%,100%{ text-shadow:0 0 20px #02A803; }
-  25%{ text-shadow:0 0 10px #125A06; }
-  50%{ text-shadow:0 0 20px #1BD31B; }
-  75%{ text-shadow:0 0 10px #47B347; }
+  0%,100%{ text-shadow:0 0 30px #00FF00; }
+  25%{ text-shadow:0 0 20px #009900; }
+  50%{ text-shadow:0 0 30px #00ff00; }
+  75%{ text-shadow:0 0 20px #009900; }
 }
 
 h1.spotiRock{
-  animation:glow 10s ease-in-out infinite;
+  animation:glow 2s ease-in-out infinite;
   display:block;
   width:100%;
-  padding:10px;
-  line-height:1.5;
   text-transform:uppercase;
   position:absolute;
   color:#fff;
   font-size: 3.2em;
   font-weight: bolder;
-  text-shadow: 5px 5px 5px green;
+  text-shadow: 0 0 20px green;
   font-family: Concert one;
+  margin: 0px;
 }
-
-h1.spotiRock:nth-child(2){ transform:translateZ(4px); }
-h1.spotiRock:nth-child(3){ transform:translateZ(8px); }
-h1.spotiRock:nth-child(4){ transform:translateZ(12px); }
-h1.spotiRock:nth-child(5){ transform:translateZ(16px); }
-h1.spotiRock:nth-child(6){ transform:translateZ(20px); }
-h1.spotiRock:nth-child(7){ transform:translateZ(24px); }
-h1.spotiRock:nth-child(8){ transform:translateZ(28px); }
 
 /* ============= INFORMATION =====================*/
 
@@ -110,7 +102,7 @@ h1.spotiRock:nth-child(8){ transform:translateZ(28px); }
   top: 22px;
   left: 27px;
   border: 0;
-  margin:1.5% 2%;
+  margin:1.5% 3%;
   padding:0 5px;
 }
 
@@ -180,14 +172,15 @@ h1.spotiRock:nth-child(8){ transform:translateZ(28px); }
 }
 
 .cover {
-  min-height: 50%;
+  max-height: 50%;
   position: relative;
+
 }
 
 .cover img {
   max-width: 100%;
-  max-height: 100%;
-  position: absolute;
+  max-height: 300px;
+  position: relative;
   left: 0;
   border: 0;
 }
@@ -224,31 +217,72 @@ input{
 
 #trackInfo{
   background-color: rgba(50,50,50,0.6 );
-  margin:20px 20px;
-  border-radius: 20px;
+/*  margin:20px 20px;
+*/  border-radius: 20px;
   box-shadow: rgba(255,0,0,0.7);
-/*  transform:rotate3d(1,1,0,20deg);
-*/}
+}
 
-img{
+/*#trkImg{
   padding:20px 0 ;
+  box-shadow: 10px 10px 0 #0f0;
+}
+*/
+div.imgBox{
+  max-height: 45%;
+  overflow: hidden;
+}
+img.imgThumbnail{
+  max-height: 300px;
+  position: relative;
+  left: -25%;
+}
+
+header{
+  color: #fff;
+  height: 15%;
+  padding-top: 1%;
+  border-bottom: 1px solid #fff;
+  // set animation
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+header h1{
+  font-size: 1.2em;
+  // set animation
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+header.sticky {
+  position: fixed;
+  border-bottom: none;
+  padding-top: 0;
+  height: 10%;
+  width: 100%;
+  background-color: #111;
+  z-index: 2;
+}
+
+header.sticky h1{
+   font-size:3em;
 }
 
 
-.presentation{
-  min-height: 15%;
-  margin-bottom: 50px;
+.newInfo{
+  padding-top: 5%;
+  min-height: 75%;
 }
 
 form{
-  margin:10% 0;
+  margin:2% 0 0 0;
 }
 
 .songList{
   color: #fff;
 }
 
-ul.songList a, ul.songList li{
+ul.songList a, ul.songList li, p{
   color: #fff;
   list-style-type: none;
   text-decoration: none;
@@ -256,9 +290,16 @@ ul.songList a, ul.songList li{
 
 ul.songList a:hover{
   cursor: pointer;
-  color: #0a0;
-  font-weight: bolder;
+  color: #0a0  font-weight: bolder;
   text-shadow: 0 0 6px #000;
+}
+
+footer{
+  color: #ddd;
+  background-color: #242424;
+  height: 10%;
+  font-size: 12px;
+  padding-top: 1.5%;
 }
 
 /* ====================================== MODAL STYLE =============*/
@@ -278,4 +319,8 @@ section.information{
   display:none;
   transform:rotate3d(1,1,0,20deg);
 
+}
+
+.modal p{
+  color: #000;
 }
