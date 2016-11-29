@@ -150,4 +150,15 @@ $(window).scroll(function() {
     }
 });
 
+$('#nav-btn').click(function(){
+	$('#mySidenav').css('width', '140px');
+	$(this).css('display','block');
+});
+
+$('#close-btn').click(function(){
+	$('#mySidenav').css('width', '70px');
+	$(this).css('display','none');
+});
+
+
 }); // == DOCUMENT.ready end

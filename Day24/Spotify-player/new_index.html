@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spotify player</title>
+	<!-- CUSTOM CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- CUSTOM JS -->
+  <script src="js/spoty.js"></script>
+</head>
+<body>
+	<header class="top container-fluid">
+		<div class="row">
+			<div id="square-left" class="square"></div>
+				<div id="square-center" class="square">
+					<button name="search-btn" id="nav-btn" type="submit" class=" center-block">
+						<span class="glyphicon glyphicon-th-list" aria-hidden="true" onclick="openNav()"></span>
+				</button>
+				</div>
+			<div id="square-right" class="square">
+				<button name="search-btn" id="search-btn" type="submit" class=" center-block">
+				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+				</button>
+			</div>
+			<div class="search-bar col-sx-12 col-md-4">
+				<input id="input-search" class="form-control" type="text" placeholder="Search for your favorite song title...">
+			</div>
+			<div class="brand col-md-6">
+				<h1 class="spotiRock CO text-right">SPOTIFY PLAYER</h1>
+			</div>
+		</div>
+		<aside>
+			<div id="mySidenav" class="sidenav">
+			  <a id="close-btn" href="#" class="closebtn">&times;</a>
+			  <a href="#">About</a>
+			  <a href="#">Services</a>
+			  <a href="#">Clients</a>
+			  <a href="#">Contact</a>
+			</div>
+		</aside>
+	</header>
+	
+</body>
+</html>

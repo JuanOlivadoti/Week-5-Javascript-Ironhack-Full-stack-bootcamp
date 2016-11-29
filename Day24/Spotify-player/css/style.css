@@ -3,14 +3,45 @@
 body{
   background: url('../assets/lenny_nyc.jpg') center center no-repeat;
   background-size: cover;
+  font-family: Open Sans;
 }
 
-label{
-  color:#eee;
-  font-weight: bolder;
+/* header*/
+header.top{
+  background-color: blue;
+  min-height: 60px;
 }
 
-/* ============== PAGE BRAND ==================*/
+.search-bar{
+  background-color: red;
+  height: 60px;
+}
+.square{
+  background-color: brown;
+  height: 60px;
+  width: 70px;
+  float:left;
+  border:1px solid #fff;
+}
+
+button{
+  height: 100%;
+  background-color: transparent;
+  border:none;
+  box-shadow: none;
+
+}
+input.form-control, input.form-control:hover{
+  height: 100%;
+  background-color: transparent;
+  border:none;
+  box-shadow: none;
+  padding:0;
+}
+
+input.form-control:hover{
+
+}
 
 @keyframes glow {
   0%,100%{ text-shadow:0 0 30px #00FF00; }
@@ -24,303 +55,64 @@ h1.spotiRock{
   display:block;
   width:100%;
   text-transform:uppercase;
-  position:absolute;
+  position:relative;
   color:#fff;
   font-size: 3.2em;
   font-weight: bolder;
   text-shadow: 0 0 20px green;
   font-family: Concert one;
   margin: 0px;
+  top:-5px;
+  padding-right: 50px;
 }
 
-/* ============= INFORMATION =====================*/
+/* =================== SIDE NAVBAR ===============*/
 
-.widget {
-  width: 300px;
-  margin: 10px auto 0;
-  border-radius: 5px;
-  overflow: hidden;
-  display: block;
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 70PX; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 60px;
+    left: 0;
+    background-color: #0f0; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-.back{
-  background-color: rgba(0,0,0,0.7);
-  min-height: 50%;
-  margin:20px 0;
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
 }
 
-
-.btn-play {
-  margin: 9px;
-  width: 60px;
-  height: 60px;
-  float: left;
-  border-radius: 50px;
-  border: 1px solid #fff;
-  user-select: none;
-  -webkit-user-select: none;
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
 }
 
-.btn-play:after {
-  content: ' ';
-  position: relative;
-  display: block;
-  width: 0px;
-  height: 0px;
-  margin-left: 50%;
-  margin-top: 50%;
-  left: -10px;
-  top: -18px;
-  border-top: 18px solid transparent;
-  border-bottom: 18px solid transparent;
-  border-left: 30px solid #fff;
-  transition: all .15s;
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
 
-.btn-play:hover {
-  cursor: pointer;
-  border-color: transparent;
-
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
 }
 
-.btn-play:hover:after {
-  border-left-color: #666;
-  transform: scale(2,2);
-  border-left: 30px solid cyan;
-}
-
-.btn-play:active:after {
-  border-left-color: #000;
-}
-
-.btn-play.playing:before, .btn-play.playing:after {
-  width: 9px;
-  height: 36px;
-  background-color: #fff;
-  position: absolute;
-  content: "";
-  top: 22px;
-  left: 27px;
-  border: 0;
-  margin:1.5% 3%;
-  padding:0 5px;
-}
-
-.btn-play.playing:after {
-  left: 43px;
-}
-
-.btn-play.playing:hover:before, .btn-play.playing:hover:after {
-  background-color: #d24343;
-  transform: scale(2,2);
-}
-
-.btn-play.playing:hover:before{
-  left: 2%;
-}
-
-
-.btn-play.playing:active:before, .btn-play.playing:active:after {
-  background-color: #000;
-}
-
-.btn-play.disabled {
-  border-color: #888;
-}
-
-.btn-play.disabled:hover {
-  cursor: none;
-}
-
-.btn-play.disabled:after {
-  border-left-color: #888;
-}
-
-.metadata {
-  display: inline-block;
-  padding: 10px;
-  width: calc(100% - 100px);
-}
-
-.songTitle, .author {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  white-space: nowrap;
-  margin: 0;
-  line-height: 1.4em;
-  height: 1.4em;
-  font-weight: bold;
-  color:#ddd;
-}
-
-.author{
-  font-size: 14px;
-  font-weight: normal;
-}
-
-.author:hover{
-  text-decoration: none;
-  font-size:16px;
-  color:green;
-  cursor: pointer;
-}
-
-.seekbar {
-  margin-top: 5px;
-  width: 100%;
-}
-
-.cover {
-  max-height: 50%;
-  position: relative;
-
-}
-
-.cover img {
-  max-width: 100%;
-  max-height: 300px;
-  position: relative;
-  left: 0;
-  border: 0;
-}
-
-audio {
-  display: none;
-}
-
-progress {
-  width: 100%;
-  height: 5px;
-  padding: 0;
-  background-color: #3e3e40;
-  position: relative;
-  border: 0;
-  overflow: hidden;
-}
-
-progress::-webkit-progress-bar {
-  background-color: #3e3e40;
-}
-
-progress::-webkit-progress-value {
-  background-color: #45a800;
-}
-
-progress::-moz-progress-bar {
-  background-color: #45a800;
-}
-
-input{
-  width:100%;
-}
-
-#trackInfo{
-  background-color: rgba(50,50,50,0.6 );
-/*  margin:20px 20px;
-*/  border-radius: 20px;
-  box-shadow: rgba(255,0,0,0.7);
-}
-
-/*#trkImg{
-  padding:20px 0 ;
-  box-shadow: 10px 10px 0 #0f0;
-}
-*/
-div.imgBox{
-  max-height: 45%;
-  overflow: hidden;
-}
-img.imgThumbnail{
-  max-height: 300px;
-  position: relative;
-  left: -25%;
-}
-
-header{
-  color: #fff;
-  height: 15%;
-  padding-top: 1%;
-  border-bottom: 1px solid #fff;
-  // set animation
-  -webkit-transition: all 0.8s ease;
-  transition: all 0.8s ease;
-}
-
-header h1{
-  font-size: 1.2em;
-  // set animation
-  -webkit-transition: all 0.8s ease;
-  transition: all 0.8s ease;
-}
-
-header.sticky {
-  position: fixed;
-  border-bottom: none;
-  padding-top: 0;
-  height: 10%;
-  width: 100%;
-  background-color: #111;
-  z-index: 2;
-}
-
-header.sticky h1{
-   font-size:3em;
-}
-
-
-.newInfo{
-  padding-top: 5%;
-  min-height: 75%;
-}
-
-form{
-  margin:2% 0 0 0;
-}
-
-.songList{
-  color: #fff;
-}
-
-ul.songList a, ul.songList li, p{
-  color: #fff;
-  list-style-type: none;
-  text-decoration: none;
-}
-
-ul.songList a:hover{
-  cursor: pointer;
-  color: #0a0  font-weight: bolder;
-  text-shadow: 0 0 6px #000;
-}
-
-footer{
-  color: #ddd;
-  background-color: #242424;
-  height: 10%;
-  font-size: 12px;
-  padding-top: 1.5%;
-}
-
-/* ====================================== MODAL STYLE =============*/
-
-.modal-dialog{
-  background-size: cover;
-  min-width: 70%;
-  box-sizing: border-box;
-}
-
-#author-photo{
-  height:400px;
-  width: 400px;
-}
-
-section.information{
-  display:none;
-  transform:rotate3d(1,1,0,20deg);
-
-}
-
-.modal p{
-  color: #000;
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
 }
