@@ -20,7 +20,7 @@ $(document).ready(function() {
 // ====== ERROR handler
 
 function handleErrors(errors){
-	conosle.log(errors);
+	console.log(errors);
 }
 
 //======================== SHOW RESULT function()
@@ -46,14 +46,18 @@ function showAll(response) {
 	info.forEach(function(element){
 
 		var liElement =`
-			<div class="col-sm-2">
-				<div class="imgBox">
-					<a class="thumbnails" data-ref="${element.href}">
-						<img class="imgThumbnail" src="${element.album.images["0"].url}" alt="">
-					</a>
+			<div class="col-md-2 col-sm-4 col-sx-6">
+				<div class="item">
+					<div class="imgBox">
+						<a class="thumbnails" data-ref="${element.href}">
+							<img class="imgThumbnail" src="${element.album.images["0"].url}" alt="">
+						</a>
+					</div>
+					<div class="infoBox">
+					  <h4 class="songTitle" id="songTitle">${element.name}</h4>
+					  <p data-toggle="modal" data-target="#myModal" value=""${element.artists[0].name}>${element.artists[0].name}</p>
+					</div>
 				</div>
-			  <h4 class="songTitle" id="songTitle">${element.name}</h4>
-			  <p data-toggle="modal" data-target="#myModal" value=""${element.artists[0].name}>${element.artists[0].name}</p>
 			</div>
 			`;
 

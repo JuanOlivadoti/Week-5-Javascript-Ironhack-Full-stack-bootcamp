@@ -15,35 +15,69 @@
 </head>
 <body>
 	<header class="top container-fluid">
+
 		<div class="row">
-			<div id="square-left" class="square"></div>
-				<div id="square-center" class="square">
-					<button name="search-btn" id="nav-btn" type="submit" class=" center-block">
-						<span class="glyphicon glyphicon-th-list" aria-hidden="true" onclick="openNav()"></span>
+			<div id="square-left" class="square">
+			</div>
+			<div id="square-center" class="square">
+				<button name="search-btn" id="nav-btn" type="submit" class=" center-block">
+					<span class="glyphicon glyphicon-th-list" aria-hidden="true" onclick="openNav()"></span>
 				</button>
-				</div>
+			</div>
 			<div id="square-right" class="square">
 				<button name="search-btn" id="search-btn" type="submit" class=" center-block">
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 				</button>
 			</div>
+
 			<div class="search-bar col-sx-12 col-md-4">
 				<input id="input-search" class="form-control" type="text" placeholder="Search for your favorite song title...">
 			</div>
+
 			<div class="brand col-md-6">
 				<h1 class="spotiRock CO text-right">SPOTIFY PLAYER</h1>
 			</div>
+
 		</div>
-		<aside>
-			<div id="mySidenav" class="sidenav">
-			  <a id="close-btn" href="#" class="closebtn">&times;</a>
-			  <a href="#">About</a>
-			  <a href="#">Services</a>
-			  <a href="#">Clients</a>
-			  <a href="#">Contact</a>
-			</div>
-		</aside>
 	</header>
 	
+	<section>
+		
+		<section id="content" class="container-fluid">
+
+			<div class="row">
+				<aside class="aside">
+					<section class="gr-aside">
+						<div id="mySidenav" class="sidenav">
+						  <a id="close-btn" href="#" class="closebtn">&times;</a>
+						  <a href="#">About</a>
+						  <a href="#">Services</a>
+						  <a href="#">Clients</a>
+						  <a href="#">Contact</a>
+						</div>				
+					</section>
+				</aside>
+
+				<div id="songsCovers">
+					
+				</div>
+			</div>
+
+			<footer class="container-fluid">
+				<div class="row">
+					<div id="square-left" class="square">
+					</div>
+				</div>
+			</footer>
+		</section>
+		
+
+
+	</section>
+
+<!-- JS SCRIPTS - jquery, ajax, bootstrap -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </body>
 </html>
